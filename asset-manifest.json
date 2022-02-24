@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.21e47897.chunk.css",
-    "main.js": "/static/js/main.cdf6fec5.chunk.js",
-    "main.js.map": "/static/js/main.cdf6fec5.chunk.js.map",
+    "main.js": "/static/js/main.87812305.chunk.js",
+    "main.js.map": "/static/js/main.87812305.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.6a060e8a.js",
     "runtime-main.js.map": "/static/js/runtime-main.6a060e8a.js.map",
     "static/css/2.429e79c4.chunk.css": "/static/css/2.429e79c4.chunk.css",
     "static/js/2.515e3152.chunk.js": "/static/js/2.515e3152.chunk.js",
     "static/js/2.515e3152.chunk.js.map": "/static/js/2.515e3152.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.46c01515c71e7b2238ddf1867de08749.js": "/precache-manifest.46c01515c71e7b2238ddf1867de08749.js",
+    "precache-manifest.88071f4e917f08ce9b61f4ed4f6bbbba.js": "/precache-manifest.88071f4e917f08ce9b61f4ed4f6bbbba.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.429e79c4.chunk.css.map": "/static/css/2.429e79c4.chunk.css.map",
     "static/css/main.21e47897.chunk.css.map": "/static/css/main.21e47897.chunk.css.map",
     "static/js/2.515e3152.chunk.js.LICENSE.txt": "/static/js/2.515e3152.chunk.js.LICENSE.txt",
-    "static/media/Anurag_Vaidhya_2021.pdf": "/static/media/Anurag_Vaidhya_2021.52c209ff.pdf",
+    "static/media/Anurag_Vaidhya_2022.pdf": "/static/media/Anurag_Vaidhya_2022.9dfa5c7e.pdf",
     "static/media/Unconf.jpg": "/static/media/Unconf.b99b0bae.jpg",
     "static/media/cognizant.jpg": "/static/media/cognizant.ced015f1.jpg",
     "static/media/google-kelsey.jpg": "/static/media/google-kelsey.335b34cc.jpg",
@@ -27,6 +27,6 @@
     "static/css/2.429e79c4.chunk.css",
     "static/js/2.515e3152.chunk.js",
     "static/css/main.21e47897.chunk.css",
-    "static/js/main.cdf6fec5.chunk.js"
+    "static/js/main.87812305.chunk.js"
   ]
 }

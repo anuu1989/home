@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "45c5d5400b83e0416e3da290192e2972",
+    "revision": "c4f48818136028e5b18e8e26a087d851",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.429e79c4.chunk.css"
   },
   {
-    "revision": "bb8a8d794ec88011afd6",
+    "revision": "e9d596fd6f89e3c20d8d",
     "url": "/static/css/main.21e47897.chunk.css"
   },
   {
@@ -20,16 +20,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.515e3152.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bb8a8d794ec88011afd6",
-    "url": "/static/js/main.cdf6fec5.chunk.js"
+    "revision": "e9d596fd6f89e3c20d8d",
+    "url": "/static/js/main.87812305.chunk.js"
   },
   {
     "revision": "c88671eb88bf6c28dee9",
     "url": "/static/js/runtime-main.6a060e8a.js"
   },
   {
-    "revision": "52c209ff6cea828d04c424fbd37de895",
-    "url": "/static/media/Anurag_Vaidhya_2021.52c209ff.pdf"
+    "revision": "9dfa5c7e23d2173f97c9014127316813",
+    "url": "/static/media/Anurag_Vaidhya_2022.9dfa5c7e.pdf"
   },
   {
     "revision": "b99b0bae4fec9823c722a9c49489b310",
