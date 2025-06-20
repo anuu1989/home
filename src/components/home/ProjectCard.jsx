@@ -52,7 +52,7 @@ const ProjectCard = ({ value }) => {
           <p className="card-text">{description} </p>
           <a
             href={`${svn_url}/archive/master.zip`}
-            className="btn btn-outline-secondary mr-3"
+            className="btn btn-outline-secondary me-3"
           >
             <i className="fab fa-github" /> Clone Project
           </a>

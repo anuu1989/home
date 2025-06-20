@@ -3,7 +3,7 @@ import React, { useState, useEffect, Profiler } from "react";
 
 const Leadership = () => {
     return (
-        <div id="responsibilities" className="jumbotron jumbotron-fluid m-0" style={{backgroundColor:'white'}}>
+        <div id="responsibilities" className="m-0" style={{backgroundColor:'white'}}>
           <div className="container container-fluid">
             <div className="row"> 
                 <div className="col d-lg-inline align-self-center">

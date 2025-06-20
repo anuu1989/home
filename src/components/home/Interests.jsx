@@ -3,7 +3,7 @@ import fitness from "../../editable-stuff/asset/img/fitness.png";
 import learning from "../../editable-stuff/asset/img/learning.png";
 import travelling from "../../editable-stuff/asset/img/travelling.png";
 import cooking from "../../editable-stuff/asset/img/cooking.png";
-import {Col, Row, Card, CardDeck, Button} from "react-bootstrap";
+import {Col, Row, Button} from "react-bootstrap";
 import {
     aboutHeading,
     aboutDescription,
@@ -20,7 +20,7 @@ import {
   };
 const Interests = () => {
   return (
-    <div id="interests" className="jumbotron jumbotron-fluid m-0" style={{backgroundColor:'white'}}>
+    <div id="interests" className="m-0" style={{backgroundColor:'white'}}>
       <div className="container container-fluid">
         <div className="row">
             <div className="col d-lg-inline align-self-center">
