@@ -24,7 +24,7 @@ import {
     };
 
   return (
-    <div id="contact" className="jumbotron jumbotron-fluid m-0" style={{backgroundColor:'#f7f7f7'}}>
+    <div id="contact" className="m-0" style={{backgroundColor:'#f7f7f7'}}>
     <div className="container container-fluid">
           <div className="d-inline align-self-center">
           <h2 className="display-4 pb-3 text-center"><b>Get In Touch</b></h2>

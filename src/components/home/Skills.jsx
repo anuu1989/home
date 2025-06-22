@@ -17,7 +17,7 @@ const divStyle = {
 };
 const Skills = () => {
 return (
-    <div id="skills" className="jumbotron jumbotron-fluid m-0" style={{backgroundColor:'#f7f7f7'}}>
+    <div id="skills" className="m-0" style={{backgroundColor:'#f7f7f7'}}>
       <div className="container container-fluid">
         
             {/* <div className="col-5 d-none d-lg-inline align-self-center">

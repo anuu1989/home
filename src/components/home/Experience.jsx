@@ -9,7 +9,7 @@ const divStyle = {
   };
 const Experience = () => {
 return (
-    <div id="experience" className="jumbotron jumbotron-fluid m-0" style={{backgroundColor:'white'}}>
+    <div id="experience" className="m-0" style={{backgroundColor:'white'}}>
       <div className="container container-fluid">
         <div className="row">
             <div className="col d-lg-inline align-self-center">

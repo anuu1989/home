@@ -49,7 +49,7 @@ const AboutMe = () => {
   };
 
   return (
-    <div id="aboutme" className="jumbotron jumbotron-fluid m-0" style={{backgroundColor:'#f7f7f7'}}>
+    <div id="aboutme" className="m-0" style={{backgroundColor:'#f7f7f7'}}>
       <div className="container container-fluid">
         <div className="row" style={divStyle}>
             <div className="col-5 d-none d-lg-inline align-self-center">
