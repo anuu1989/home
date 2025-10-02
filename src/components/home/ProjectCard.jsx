@@ -44,34 +44,54 @@ const ProjectCard = ({ value }) => {
 
   const { name, description, svn_url, stargazers_count, languages_url } = value;
   return (
-    <div className="col-md-6">
-      <div className="card shadow-lg p-3 mb-5 bg-white rounded">
-        {/* <img src="" className="card-img-top" alt="..." /> */}
-        <div className="card-body">
-          <h5 className="card-title">{name} </h5>
-          <p className="card-text">{description} </p>
-          <a
-            href={`${svn_url}/archive/master.zip`}
-            className="btn btn-outline-secondary me-3"
-          >
-            <i className="fab fa-github" /> Clone Project
-          </a>
-          <a
-            href={svn_url}
-            target=" _blank"
-            className="btn btn-outline-secondary"
-          >
-            <i className="fab fa-github" /> Repo
-          </a>
-          <hr />
-          <Language value={languages_url}></Language>
-          <p className="card-text">
-            <span className="text-dark card-link mr-4">
-              <i className="fab fa-github" /> Stars{" "}
-              <span className="badge badge-dark">{stargazers_count}</span>
+    <div className="project-card-wrapper">
+      <div className="project-card">
+        <div className="project-card-header">
+          <div className="project-icon">
+            <i className="fab fa-github"></i>
+          </div>
+          <div className="project-stats">
+            <span className="stars-count">
+              <i className="fas fa-star"></i>
+              {stargazers_count}
             </span>
-            <small className="text-muted">Updated {updated_at}</small>
-          </p>
+          </div>
+        </div>
+        
+        <div className="project-card-body">
+          <h5 className="project-title">{name}</h5>
+          <p className="project-description">{description}</p>
+          
+          <div className="project-languages">
+            <Language value={languages_url} />
+          </div>
+          
+          <div className="project-actions">
+            <a
+              href={`${svn_url}/archive/master.zip`}
+              className="btn btn-primary btn-sm me-2"
+              download
+            >
+              <i className="fas fa-download me-1"></i>
+              Clone
+            </a>
+            <a
+              href={svn_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline-primary btn-sm"
+            >
+              <i className="fab fa-github me-1"></i>
+              View Repo
+            </a>
+          </div>
+          
+          <div className="project-footer">
+            <small className="update-time">
+              <i className="fas fa-clock me-1"></i>
+              Updated {updated_at}
+            </small>
+          </div>
         </div>
       </div>
     </div>
@@ -115,13 +135,22 @@ const Language = ({ value }) => {
   // console.log("array contains ", array, this.state.data[array[0]]);
 
   return (
-    <div className="pb-3">
-      Languages:{" "}
-      {array.map((language) => (
-        <p key={language} className="badge badge-light card-link">
-          {language}: {Math.trunc((data[language] / total_count) * 1000) / 10} %
-        </p>
-      ))}
+    <div className="languages-container">
+      {array.length > 0 && (
+        <>
+          <div className="languages-label">
+            <i className="fas fa-code me-1"></i>
+            Languages:
+          </div>
+          <div className="languages-list">
+            {array.map((language) => (
+              <span key={language} className="language-tag">
+                {language}: {Math.trunc((data[language] / total_count) * 1000) / 10}%
+              </span>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };
