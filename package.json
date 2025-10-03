@@ -28,7 +28,7 @@
     "terser-webpack-plugin": "4.2.3",
     "typescript": "4.4.4"
   },
-  "homepage": "https://anuragvaidhya.github.io/portfolio",
+  "homepage": "https://www.anuragvaidhya.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
