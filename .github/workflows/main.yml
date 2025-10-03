@@ -16,7 +16,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [16.20.2]
+        node-version: [18.x]
     
     steps:
       - name: Checkout Repository 🛎️
@@ -30,6 +30,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
+      - name: Clear npm cache 🧹
+        run: |
+          npm cache clean --force
+
       - name: Install Dependencies 📦
         run: |
           npm ci
@@ -39,13 +43,24 @@ jobs:
           npm test -- --coverage --watchAll=false
         continue-on-error: true
 
+      - name: Clean Build Directory 🗑️
+        run: |
+          rm -rf build/
+
       - name: Build Application 🏗️
         run: |
           npm run build
         env:
           CI: false
           GENERATE_SOURCEMAP: false
-          PUBLIC_URL: /portfolio
+          # Removed PUBLIC_URL to use root domain
+
+      - name: Verify Build Output 🔍
+        run: |
+          echo "Build completed. Checking output..."
+          ls -la build/
+          echo "Checking index.html for correct paths..."
+          grep -n "static/" build/index.html || echo "No static paths found"
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.3
@@ -55,3 +70,12 @@ jobs:
           folder: build
           clean: true
           single-commit: true
+          force: true
+
+      - name: Deployment Summary 📋
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+        run: |
+          echo "✅ Deployment completed successfully!"
+          echo "🌐 Site URL: https://www.anuragvaidhya.com"
+          echo "⏰ Deployed at: $(date)"
+          echo "🔄 Cache may take 5-10 minutes to clear"
