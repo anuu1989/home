@@ -31,6 +31,96 @@ const Skills = () => {
 
   const skillCategories = [
     {
+      id: 'cloud',
+      title: "Cloud Platforms & Services",
+      icon: "fas fa-server",
+      gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+      description: "Multi-cloud expertise and platform services",
+      skills: [
+        { 
+          name: "AWS", 
+          level: 80, 
+          color: "#ff9900", 
+          icon: "fab fa-aws",
+          experience: "8+ years",
+          projects: 25,
+          tags: ["EC2", "Lambda", "S3", "RDS"]
+        },
+        { 
+          name: "Azure", 
+          level: 75, 
+          color: "#0078d4", 
+          icon: "fab fa-microsoft",
+          experience: "6+ years",
+          projects: 18,
+          tags: ["App Service", "Functions", "DevOps"]
+        },
+        { 
+          name: "GCP", 
+          level: 70, 
+          color: "#4285f4", 
+          icon: "fab fa-google",
+          experience: "4+ years",
+          projects: 12,
+          tags: ["Compute Engine", "Cloud Run", "BigQuery"]
+        },
+        { 
+          name: "OpenShift", 
+          level: 72, 
+          color: "#ee0000", 
+          icon: "fab fa-redhat",
+          experience: "5+ years",
+          projects: 10,
+          tags: ["Enterprise", "Operators", "Pipelines"]
+        }
+      ]
+    },
+    {
+      id: 'devops',
+      title: "DevOps & Infrastructure",
+      icon: "fas fa-cloud",
+      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      description: "Modern infrastructure and deployment practices",
+      skills: [
+        { 
+          name: "CI/CD Pipelines", 
+          level: 90, 
+          color: "#4facfe", 
+          icon: "fas fa-sync-alt",
+          experience: "9+ years",
+          projects: 28,
+          tags: ["Jenkins", "GitLab CI", "GitHub Actions"]
+        },
+        { 
+          name: "Docker", 
+          level: 85, 
+          color: "#0db7ed", 
+          icon: "fab fa-docker",
+          experience: "7+ years",
+          projects: 22,
+          tags: ["Containerization", "Multi-stage", "Compose"]
+        },
+        { 
+          name: "Kubernetes", 
+          level: 75, 
+          color: "#326ce5", 
+          icon: "fas fa-dharmachakra",
+          experience: "5+ years",
+          projects: 15,
+          tags: ["Orchestration", "Helm", "Operators"]
+        },
+        { 
+          name: "Terraform", 
+          level: 82, 
+          color: "#623ce4", 
+          icon: "fas fa-layer-group",
+          experience: "6+ years",
+          projects: 18,
+          tags: ["IaC", "Multi-cloud", "Modules"]
+        }
+      ]
+    },
+    {
       id: 'programming',
       title: "Programming & Development",
       icon: "fas fa-code",
@@ -117,96 +207,6 @@ const Skills = () => {
           experience: "6+ years",
           projects: 12,
           tags: ["OWASP", "Penetration", "SAST"]
-        }
-      ]
-    },
-    {
-      id: 'devops',
-      title: "DevOps & Infrastructure",
-      icon: "fas fa-cloud",
-      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-      description: "Modern infrastructure and deployment practices",
-      skills: [
-        { 
-          name: "CI/CD Pipelines", 
-          level: 90, 
-          color: "#4facfe", 
-          icon: "fas fa-sync-alt",
-          experience: "9+ years",
-          projects: 28,
-          tags: ["Jenkins", "GitLab CI", "GitHub Actions"]
-        },
-        { 
-          name: "Docker", 
-          level: 85, 
-          color: "#0db7ed", 
-          icon: "fab fa-docker",
-          experience: "7+ years",
-          projects: 22,
-          tags: ["Containerization", "Multi-stage", "Compose"]
-        },
-        { 
-          name: "Kubernetes", 
-          level: 75, 
-          color: "#326ce5", 
-          icon: "fas fa-dharmachakra",
-          experience: "5+ years",
-          projects: 15,
-          tags: ["Orchestration", "Helm", "Operators"]
-        },
-        { 
-          name: "Terraform", 
-          level: 82, 
-          color: "#623ce4", 
-          icon: "fas fa-layer-group",
-          experience: "6+ years",
-          projects: 18,
-          tags: ["IaC", "Multi-cloud", "Modules"]
-        }
-      ]
-    },
-    {
-      id: 'cloud',
-      title: "Cloud Platforms & Services",
-      icon: "fas fa-server",
-      gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-      description: "Multi-cloud expertise and platform services",
-      skills: [
-        { 
-          name: "AWS", 
-          level: 80, 
-          color: "#ff9900", 
-          icon: "fab fa-aws",
-          experience: "8+ years",
-          projects: 25,
-          tags: ["EC2", "Lambda", "S3", "RDS"]
-        },
-        { 
-          name: "Azure", 
-          level: 75, 
-          color: "#0078d4", 
-          icon: "fab fa-microsoft",
-          experience: "6+ years",
-          projects: 18,
-          tags: ["App Service", "Functions", "DevOps"]
-        },
-        { 
-          name: "GCP", 
-          level: 70, 
-          color: "#4285f4", 
-          icon: "fab fa-google",
-          experience: "4+ years",
-          projects: 12,
-          tags: ["Compute Engine", "Cloud Run", "BigQuery"]
-        },
-        { 
-          name: "OpenShift", 
-          level: 72, 
-          color: "#ee0000", 
-          icon: "fab fa-redhat",
-          experience: "5+ years",
-          projects: 10,
-          tags: ["Enterprise", "Operators", "Pipelines"]
         }
       ]
     }
@@ -364,8 +364,8 @@ const Skills = () => {
               Expertise That <span className="gradient-text">Drives Results</span>
             </h1>
             <p className="hero-description">
-              14+ years of hands-on experience across the full technology stack, 
-              from enterprise development to cloud-native solutions
+              14+ years of hands-on experience (2010-2024) across the full technology stack, 
+              from enterprise development to cloud-native solutions, leading teams and driving innovation
             </p>
             
             {/* Search Bar */}
@@ -408,6 +408,50 @@ const Skills = () => {
             <div className="skill-bubble" style={{ animationDelay: '1.5s' }}>
               <i className="fab fa-python"></i>
               <span>Python</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '2s' }}>
+              <i className="fab fa-java"></i>
+              <span>Java</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '2.5s' }}>
+              <i className="fas fa-dharmachakra"></i>
+              <span>Kubernetes</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '3s' }}>
+              <i className="fab fa-google"></i>
+              <span>GCP</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '3.5s' }}>
+              <i className="fas fa-chart-line"></i>
+              <span>Grafana</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '4s' }}>
+              <i className="fas fa-fire"></i>
+              <span>Prometheus</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '4.5s' }}>
+              <i className="fab fa-node-js"></i>
+              <span>Node.js</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '5s' }}>
+              <i className="fas fa-layer-group"></i>
+              <span>Terraform</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '5.5s' }}>
+              <i className="fab fa-jenkins"></i>
+              <span>Jenkins</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '6s' }}>
+              <i className="fab fa-microsoft"></i>
+              <span>Azure</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '6.5s' }}>
+              <i className="fas fa-database"></i>
+              <span>MongoDB</span>
+            </div>
+            <div className="skill-bubble" style={{ animationDelay: '7s' }}>
+              <i className="fab fa-git-alt"></i>
+              <span>Git</span>
             </div>
           </div>
         </div>

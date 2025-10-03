@@ -15,7 +15,7 @@ const ExperiencePage = () => {
           <div className="container">
             <h1 className="page-title">Professional Experience</h1>
             <p className="page-subtitle">
-              My journey through different roles and companies in the tech industry
+              14+ years of progressive growth through different roles and companies in the tech industry (2010-2024)
             </p>
           </div>
         </div>

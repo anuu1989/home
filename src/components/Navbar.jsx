@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const navItems = [
     { href: "/", label: "Welcome", icon: "fas fa-home", route: "/" },
-    { href: "/about", label: "My Story", icon: "fas fa-user-circle", route: "/about" },
+    { href: "/about", label: "About Me", icon: "fas fa-user-circle", route: "/about" },
     { href: "/experience", label: "Journey", icon: "fas fa-route", route: "/experience" },
     { href: "/responsibilities", label: "Expertise", icon: "fas fa-star", route: "/responsibilities" },
     { href: "/leadership", label: "Leadership", icon: "fas fa-users-cog", route: "/leadership" },

@@ -1,33 +1,27 @@
 import React, { Suspense } from "react";
 import LoadingSpinner from "../components/LoadingSpinner";
-import SectionDivider from "../components/SectionDivider";
-
-const Project = React.lazy(() => import("../components/home/Project"));
+import PortfolioSection from "../components/modern/PortfolioSection";
 
 const ProjectsPage = () => {
   return (
     <div className="page-container">
-      <div 
-        className="page-content"
-        style={{ background: "white" }}
-      >
+      <div className="page-content" style={{ background: "white" }}>
         <div className="page-header">
           <div className="container">
-            <h1 className="page-title">Featured Projects</h1>
+            <h1 className="page-title">Innovative Solutions</h1>
             <p className="page-subtitle">
-              Showcasing my latest work and technical achievements
+              Showcasing cutting-edge projects in cloud infrastructure, automation,<br />
+              DevOps practices, and enterprise solutions
             </p>
           </div>
         </div>
-        
+
         <Suspense fallback={<LoadingSpinner />}>
           <section id="projects" className="section-content">
-            <Project />
+            <PortfolioSection />
           </section>
         </Suspense>
       </div>
-      
-
     </div>
   );
 };

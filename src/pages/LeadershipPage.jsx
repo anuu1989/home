@@ -15,7 +15,7 @@ const LeadershipPage = () => {
           <div className="container">
             <h1 className="page-title">Leadership & Management</h1>
             <p className="page-subtitle">
-              Leading teams and driving successful project outcomes
+              14+ years of leading high-performing teams and driving successful project outcomes across diverse industries
             </p>
           </div>
         </div>

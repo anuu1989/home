@@ -90,10 +90,10 @@ export const useLocalStorage = (key, initialValue, options = {}) => {
   const setValue = useCallback((value) => {
     try {
       setError(null);
-      
+
       // Allow value to be a function so we have the same API as useState
       const valueToStore = value instanceof Function ? value(storedValue) : value;
-      
+
       // Validate before storing
       if (validator && !validator(valueToStore)) {
         throw new Error(`Invalid data provided for key: ${key}`);
@@ -103,13 +103,13 @@ export const useLocalStorage = (key, initialValue, options = {}) => {
 
       if (typeof window !== 'undefined') {
         let stringValue = serializer.stringify(valueToStore);
-        
+
         if (encrypt) {
           stringValue = simpleEncrypt(stringValue);
         }
-        
+
         window.localStorage.setItem(key, stringValue);
-        
+
         // Dispatch custom event for cross-tab sync
         if (syncAcrossTabs) {
           window.dispatchEvent(
@@ -130,10 +130,10 @@ export const useLocalStorage = (key, initialValue, options = {}) => {
     try {
       setError(null);
       setStoredValue(initialValue);
-      
+
       if (typeof window !== 'undefined') {
         window.localStorage.removeItem(key);
-        
+
         if (syncAcrossTabs) {
           window.dispatchEvent(
             new CustomEvent('localStorage-change', {
@@ -224,10 +224,10 @@ export const useMultipleLocalStorage = (keys, options = {}) => {
   const setValue = useCallback((key, value) => {
     try {
       const valueToStore = value instanceof Function ? value(values[key]) : value;
-      
+
       setValues(prev => ({ ...prev, [key]: valueToStore }));
       localStorage.setItem(key, JSON.stringify(valueToStore));
-      
+
       // Clear error for this key
       setErrors(prev => {
         const newErrors = { ...prev };
@@ -247,7 +247,7 @@ export const useMultipleLocalStorage = (keys, options = {}) => {
         return newValues;
       });
       localStorage.removeItem(key);
-      
+
       setErrors(prev => {
         const newErrors = { ...prev };
         delete newErrors[key];

@@ -22,6 +22,7 @@ const LeadershipPage = lazy(() => import("./pages/LeadershipPage"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 const SkillsPage = lazy(() => import("./pages/SkillsPage"));
 const InterestsPage = lazy(() => import("./pages/InterestsPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
 
 // Lazy load blog components only if blog is enabled
 const Blog = showBlog ? lazy(() => import("./components/blog/Blog")) : null;
@@ -154,6 +155,17 @@ const AppRouter = () => {
             <PageWrapper>
               <Suspense fallback={<LoadingSpinner />}>
                 <InterestsPage />
+              </Suspense>
+            </PageWrapper>
+          } 
+        />
+        
+        <Route 
+          path="/contact" 
+          element={
+            <PageWrapper>
+              <Suspense fallback={<LoadingSpinner />}>
+                <ContactPage />
               </Suspense>
             </PageWrapper>
           } 

@@ -15,7 +15,7 @@ const ResponsibilitiesPage = () => {
           <div className="container">
             <h1 className="page-title">Key Responsibilities</h1>
             <p className="page-subtitle">
-              Core duties and achievements in my professional roles
+              14+ years of progressive responsibilities and achievements across engineering leadership roles
             </p>
           </div>
         </div>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
+import useVisitorCounter from "../../hooks/useVisitorCounter";
 
 const Footer = () => {
   const [animateContent, setAnimateContent] = useState(false);
   const footerRef = useRef(null);
+  const { visitorCount, isLoading } = useVisitorCounter();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -92,6 +94,29 @@ const Footer = () => {
             </div>
             
             <div className="footer-right">
+              <div className="footer-stats">
+                <div className="visitor-counter" title={`Thank you for visiting! You are visitor #${visitorCount}`}>
+                  <i className="fas fa-users"></i>
+                  <span className="counter-label">Visitors:</span>
+                  <span className="counter-number">
+                    {isLoading ? (
+                      <span className="counter-loading">
+                        <i className="fas fa-spinner fa-spin"></i>
+                      </span>
+                    ) : (
+                      <>
+                        <span className="count-value">{visitorCount}</span>
+                        {!isLoading && (
+                          <span className="counter-animation">
+                            <i className="fas fa-heart counter-heart"></i>
+                          </span>
+                        )}
+                      </>
+                    )}
+                  </span>
+                </div>
+              </div>
+              
               <div className="footer-tech">
                 <span className="tech-label">Crafted with</span>
                 <div className="tech-stack">

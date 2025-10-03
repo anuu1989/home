@@ -591,4 +591,164 @@ html {
     opacity: 1;
     transform: none;
   }
+}/*
+ ===== MOVE BRAND LOGO FURTHER LEFT ===== */
+.navbar-container {
+  padding-left: 1rem !important; /* Reduced from 2rem to move brand left */
+  padding-right: 2rem !important; /* Keep right padding for nav items */
+}
+
+.navbar-brand-container {
+  margin-left: -0.5rem !important; /* Additional left margin to move brand further left */
+}
+
+.navbar-brand {
+  padding-left: 0 !important; /* Remove any left padding */
+}
+
+/* Responsive adjustments for left positioning */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding-left: 0.75rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  .navbar-brand-container {
+    margin-left: -0.25rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding-left: 0.5rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .navbar-brand-container {
+    margin-left: 0 !important; /* Reset on mobile for better spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding-left: 0.25rem !important;
+    padding-right: 0.75rem !important;
+  }
+}/* ==
+=== MOVE BRAND TEXT MUCH FURTHER LEFT ===== */
+.navbar-container {
+  padding-left: 0.5rem !important; /* Further reduced left padding */
+  padding-right: 2rem !important;
+}
+
+.navbar-brand-container {
+  margin-left: -1rem !important; /* Increased negative margin to push further left */
+  position: relative !important;
+}
+
+.navbar-brand {
+  padding-left: 0 !important;
+  margin-left: -0.5rem !important; /* Additional negative margin for the brand itself */
+}
+
+.brand-logo {
+  margin-left: -0.25rem !important; /* Fine-tune the logo position */
+}
+
+/* Ensure brand doesn't go off-screen on very small devices */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding-left: 0.25rem !important;
+  }
+  
+  .navbar-brand-container {
+    margin-left: -0.5rem !important; /* Less aggressive on mobile */
+  }
+  
+  .navbar-brand {
+    margin-left: -0.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding-left: 0.125rem !important; /* Minimal padding on small screens */
+  }
+  
+  .navbar-brand-container {
+    margin-left: -0.25rem !important;
+  }
+  
+  .navbar-brand {
+    margin-left: 0 !important; /* Reset on very small screens */
+  }
+  
+  .brand-logo {
+    margin-left: 0 !important;
+  }
+}
+
+/* Ensure the brand is still clickable and accessible */
+.navbar-brand {
+  min-width: fit-content !important;
+  z-index: 1001 !important;
+}/* ====
+= FORCE BRAND TO EXTREME LEFT WITH HIGH SPECIFICITY ===== */
+.modern-navbar .navbar-container {
+  padding-left: 0 !important;
+  padding-right: 2rem !important;
+  position: relative !important;
+}
+
+.modern-navbar .navbar-brand-container {
+  position: absolute !important;
+  left: 0.125rem !important; /* Much closer to left edge - only 2px from edge */
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  margin: 0 !important;
+  z-index: 1002 !important;
+}
+
+.modern-navbar .navbar-brand {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+.modern-navbar .brand-logo {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Adjust navigation to avoid overlap */
+.modern-navbar .navbar-nav-desktop {
+  margin-left: 200px !important; /* Push nav items right to avoid brand overlap */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .modern-navbar .navbar-brand-container {
+    left: 0.0625rem !important; /* Even closer on mobile - 1px from edge */
+    position: relative !important;
+    transform: none !important;
+    top: auto !important;
+  }
+  
+  .modern-navbar .navbar-nav-desktop {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-navbar .navbar-brand-container {
+    left: 0.0625rem !important; /* 1px from edge on small screens */
+  }
+}
+
+/* Ensure mobile menu toggle stays on right */
+.modern-navbar .mobile-menu-toggle {
+  position: absolute !important;
+  right: 1rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }

@@ -15,7 +15,7 @@ const SkillsPage = () => {
           <div className="container">
             <h1 className="page-title">Technical Skills</h1>
             <p className="page-subtitle">
-              Technologies, tools, and frameworks I work with
+              14+ years of expertise with cutting-edge technologies, tools, and frameworks across the full stack
             </p>
           </div>
         </div>
