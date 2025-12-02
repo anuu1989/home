@@ -126,8 +126,9 @@ export const useAnalytics = (options = {}) => {
     eventQueue.current = [];
 
     try {
-      // Send events to analytics service
-      await analyticsAPI.post('/events', { events });
+      // Analytics disabled - events are logged to console only
+      console.log('Analytics events (not sent to server):', events);
+      // await analyticsAPI.post('/events', { events });
     } catch (error) {
       console.warn('Failed to send analytics events:', error);
       // Re-queue events on failure (with limit to prevent infinite growth)

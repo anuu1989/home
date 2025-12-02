@@ -15,7 +15,7 @@ const useVisitorCounter = () => {
         const today = new Date().toDateString();
         const currentSession = Date.now().toString();
 
-        let currentCount = storedCount ? parseInt(storedCount, 10) : 1247; // Start with a base count
+        let currentCount = storedCount ? parseInt(storedCount, 10) : 3450; // Start with a base count
         let newVisitor = false;
 
         // Check if this is a new session (new visitor or returning after session expires)
@@ -60,7 +60,7 @@ const useVisitorCounter = () => {
       } catch (error) {
         console.error('Error initializing visitor counter:', error);
         // Fallback to a reasonable default
-        setVisitorCount(1247);
+        setVisitorCount(3450);
         setIsLoading(false);
       }
     };

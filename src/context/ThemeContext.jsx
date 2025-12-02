@@ -290,7 +290,7 @@ export const ThemeProvider = ({ children }) => {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  // Load saved theme preferences
+  // Load saved theme preferences (only on mount)
   useEffect(() => {
     if (savedTheme) {
       dispatch({ type: ActionTypes.SET_THEME, payload: savedTheme.currentTheme });
@@ -298,7 +298,7 @@ export const ThemeProvider = ({ children }) => {
       dispatch({ type: ActionTypes.SET_FONT_SIZE, payload: savedTheme.fontSize });
       dispatch({ type: ActionTypes.SET_COLOR_BLIND_MODE, payload: savedTheme.colorBlindMode });
     }
-  }, [savedTheme]);
+  }, []); // Only run on mount to avoid infinite loop
 
   // Apply theme when it changes
   useEffect(() => {
@@ -313,7 +313,7 @@ export const ThemeProvider = ({ children }) => {
       fontSize: state.fontSize,
       colorBlindMode: state.colorBlindMode,
     });
-  }, [state.currentTheme, state.animations, state.fontSize, state.colorBlindMode, setSavedTheme]);
+  }, [state.currentTheme, state.animations, state.fontSize, state.colorBlindMode]); // setSavedTheme removed to prevent infinite loop
 
   // Theme actions
   const setTheme = useCallback((theme) => {

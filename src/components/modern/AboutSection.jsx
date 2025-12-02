@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 // Import the image directly
 import profileImg from '../../editable-stuff/asset/images/profile.jpg';
 
@@ -74,11 +75,11 @@ const AboutSection = () => {
             </div>
             
             <div className="profile-actions">
-              <a href="/contact" className="btn-primary">
+              <Link to="/contact" className="btn-primary">
                 <i className="fas fa-envelope"></i>
                 Get In Touch
-              </a>
-              <a href="/resume.pdf" className="btn-secondary">
+              </Link>
+              <a href="/resume.pdf" className="btn-secondary" target="_blank" rel="noopener noreferrer">
                 <i className="fas fa-download"></i>
                 Resume
               </a>
@@ -90,7 +91,7 @@ const AboutSection = () => {
         <div className="about-story">
           <div className="story-content">
             <h2>About Me</h2>
-            <p className="lead">
+            <p>
               Strategic and hands-on technology leader with 14+ years of experience across DevSecOps, 
               platform engineering, and cloud infrastructure. Known for bridging the gap between engineering 
               strategy and execution—designing and delivering secure, scalable, and high-performing platforms 
@@ -239,10 +240,10 @@ const AboutSection = () => {
           <p>Always open to discussing technology, leadership, and opportunities to create impact together</p>
           
           <div className="connect-actions">
-            <a href="/contact" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               <i className="fas fa-envelope"></i>
               Get In Touch
-            </a>
+            </Link>
             <a href="https://linkedin.com/in/anurag-vaidhya-47b93222" target="_blank" rel="noopener noreferrer" className="btn-secondary">
               <i className="fab fa-linkedin"></i>
               LinkedIn

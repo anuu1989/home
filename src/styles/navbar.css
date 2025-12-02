@@ -164,22 +164,23 @@
 
 /* CTA Button */
 .navbar-cta {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 .cta-button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  white-space: nowrap;
 }
 
 .cta-button:hover {
@@ -190,6 +191,7 @@
 
 .cta-button i {
   transition: transform 0.3s ease;
+  font-size: 0.75rem;
 }
 
 .cta-button:hover i {
@@ -459,8 +461,13 @@
   }
   
   .cta-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+    gap: 0.3rem;
+  }
+  
+  .cta-button i {
+    font-size: 0.7rem;
   }
 }
 

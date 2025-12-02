@@ -16,7 +16,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Favicon and app icons -->
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="icon" href="%PUBLIC_URL%/logo_home.png" type="image/png" />
   <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo_home.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/logo192.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/logo192.png" />
@@ -58,10 +58,8 @@
   <meta property="twitter:image" content="%PUBLIC_URL%/social-image.png" />
   <meta property="twitter:creator" content="@anuragvaidhya" />
 
-  <!-- Security Headers -->
+  <!-- Security Headers (Note: X-Frame-Options should be set as HTTP header, not meta tag) -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta http-equiv="X-Frame-Options" content="DENY" />
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
 
   <!-- Performance optimizations -->

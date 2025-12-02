@@ -21,22 +21,33 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Create mailto link with form data
+    const mailtoLink = `mailto:anuragvaidhya786@gmail.com?subject=${encodeURIComponent(`Contact Form: ${formData.subject}`)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Subject: ${formData.subject}\n\n` +
+      `Message:\n${formData.message}`
+    )}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message and reset form
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 2000);
+    }, 500);
   };
 
   const contactMethods = [
     {
       icon: 'fas fa-envelope',
       title: 'Email',
-      value: 'anurag@example.com',
-      link: 'mailto:anurag@example.com',
+      value: 'anuragvaidhya786@gmail.com',
+      link: 'mailto:anuragvaidhya786@gmail.com',
       description: 'Send me an email anytime'
     },
     {
@@ -74,61 +85,38 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="row">
-          {/* Contact Methods */}
-          <div className="col-lg-4 mb-5">
-            <div className="contact-methods animate-stagger">
-              <h3 className="modern-heading mb-4">Let's Connect</h3>
+        {/* Contact Methods Section */}
+        <div className="row mb-5">
+          <div className="col-12">
+            <div className="row justify-content-center">
               {contactMethods.map((method, index) => (
-                <a
-                  key={method.title}
-                  href={method.link}
-                  className="contact-method modern-card p-4 mb-3 d-block text-decoration-none"
-                  target={method.link.startsWith('http') ? '_blank' : '_self'}
-                  rel={method.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                >
-                  <div className="d-flex align-items-center">
-                    <div className="contact-icon me-3">
+                <div key={method.title} className="col-lg-3 col-md-6 mb-3">
+                  <a
+                    href={method.link}
+                    className="contact-method modern-card p-4 d-block text-decoration-none text-center h-100"
+                    target={method.link.startsWith('http') ? '_blank' : '_self'}
+                    rel={method.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                  >
+                    <div className="contact-icon mb-3">
                       <i className={method.icon}></i>
                     </div>
                     <div className="contact-info">
-                      <h5 className="modern-heading mb-1">{method.title}</h5>
-                      <p className="contact-value mb-1">{method.value}</p>
+                      <h5 className="modern-heading mb-2">{method.title}</h5>
+                      <p className="contact-value mb-2" style={{ fontSize: "0.9rem" }}>{method.value}</p>
                       <small className="text-muted">{method.description}</small>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               ))}
             </div>
-
-            {/* Quick Stats */}
-            <div className="contact-stats modern-card p-4 mt-4">
-              <h4 className="modern-heading mb-3">Response Time</h4>
-              <div className="stat-item mb-3">
-                <div className="d-flex justify-content-between align-items-center">
-                  <span>Email</span>
-                  <span className="badge bg-success">&lt; 24 hours</span>
-                </div>
-              </div>
-              <div className="stat-item mb-3">
-                <div className="d-flex justify-content-between align-items-center">
-                  <span>LinkedIn</span>
-                  <span className="badge bg-primary">&lt; 12 hours</span>
-                </div>
-              </div>
-              <div className="stat-item">
-                <div className="d-flex justify-content-between align-items-center">
-                  <span>Phone</span>
-                  <span className="badge bg-warning">Business hours</span>
-                </div>
-              </div>
-            </div>
           </div>
+        </div>
 
-          {/* Contact Form */}
-          <div className="col-lg-8">
+        {/* Contact Form */}
+        <div className="row justify-content-center">
+          <div className="col-lg-8 col-md-10">
             <div className="contact-form-container modern-card p-5">
-              <h3 className="modern-heading mb-4">Send a Message</h3>
+              <h3 className="modern-heading text-center mb-4">Send a Message</h3>
               
               {submitStatus === 'success' && (
                 <div className="alert alert-success d-flex align-items-center mb-4">
@@ -236,7 +224,7 @@ const ContactSection = () => {
                   <i className="fas fa-download"></i>
                   Download Resume
                 </a>
-                <a href="https://calendly.com/anuragvaidhya" className="modern-btn modern-btn-primary">
+                <a href="https://calendly.com/anuragvaidhya786" className="modern-btn modern-btn-primary" target="_blank" rel="noopener noreferrer">
                   <i className="fas fa-calendar"></i>
                   Schedule a Call
                 </a>
