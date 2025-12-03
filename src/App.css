@@ -10588,3 +10588,17 @@ FORCE PERFECT TAB ALIGNMENT ===== */
     display: none; /* Hide heart animation on mobile for cleaner look */
   }
 }
+
+
+/* Version Badge Styling */
+.version-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  padding: 2px 8px !important;
+  border-radius: 12px !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3) !important;
+  margin-left: 8px !important;
+}
