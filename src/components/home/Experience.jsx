@@ -3,6 +3,7 @@ import Cognizant from "../../editable-stuff/asset/images/cognizant.jpg";
 import Wipro from "../../editable-stuff/asset/images/wipro.jpg";
 import Accenture from "../../editable-stuff/asset/images/accenture.jpg";
 import Thoughtworks from "../../editable-stuff/asset/images/thoughtworks.png";
+import AusPost from "../../editable-stuff/asset/images/auspost.png";
 
 const Experience = () => {
   const [animateContent, setAnimateContent] = useState(false);
@@ -73,11 +74,23 @@ const Experience = () => {
       logo: Thoughtworks,
       position: "Lead Consultant",
       department: "Cloud/DevOps/Platform",
-      duration: "Aug 2025 - Present",
-      years: "2 months",
+      duration: "Aug 2025 - Nov 2025",
+      years: "3 months",
       description: "Championed agile methodologies and DevOps practices while leading digital transformation initiatives for enterprise clients.",
       technologies: ["Agile", "DevOps", "Cloud", "Platform Engineering", "Digital Transformation", "Consulting", "Technology Radar"],
       color: "#FF6B35"
+    },
+    {
+      id: 5,
+      company: "Australia Post",
+      logo: AusPost,
+      position: "Engineer - Platform, DevOps and Cloud",
+      department: "Platform Engineering",
+      duration: "Jan 2026 - Present",
+      years: "Current",
+      description: "Leading platform engineering initiatives and cloud infrastructure modernization for Australia's national postal service, focusing on scalable and reliable digital solutions.",
+      technologies: ["Platform Engineering", "DevOps", "Cloud Infrastructure", "AWS", "Kubernetes", "CI/CD", "Infrastructure as Code", "Observability"],
+      color: "#E31E24"
     },
   ];
 
@@ -293,7 +306,7 @@ const Experience = () => {
                   <i className="fas fa-building"></i>
                 </div>
                 <div className="stat-content">
-                  <div className="stat-number">4</div>
+                  <div className="stat-number">5</div>
                   <div className="stat-label">Major Companies</div>
                   <div className="stat-description">Leading technology organizations</div>
                 </div>

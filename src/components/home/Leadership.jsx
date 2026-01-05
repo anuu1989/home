@@ -114,12 +114,23 @@ const Leadership = () => {
     {
       company: "Thoughtworks",
       role: "Lead Consultant",
-      period: "2025- present",
+      period: "Aug 2025 - Nov 2025",
       highlights: [
         "Championed agile methodologies and DevOps practices",
         "Led cross-functional teams in digital transformation projects",
         "Mentored consultants on technical excellence and client engagement",
         "Drove innovation through technology radar and best practices"
+      ]
+    },
+    {
+      company: "Australia Post",
+      role: "Engineer - Platform, DevOps and Cloud",
+      period: "Jan 2026 - Present",
+      highlights: [
+        "Leading platform engineering and cloud infrastructure modernization",
+        "Implementing scalable DevOps practices for national postal operations",
+        "Driving digital transformation initiatives across the organization",
+        "Establishing cloud-native architecture and observability practices"
       ]
     }
   ];
