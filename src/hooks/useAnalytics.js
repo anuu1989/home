@@ -1,9 +1,25 @@
 import { useEffect, useCallback, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { analyticsAPI } from '../services/api';
+import ReactGA from 'react-ga4';
+
+// Initialize Google Analytics (call this once in your app)
+let gaInitialized = false;
+export const initializeGA = (measurementId) => {
+  if (measurementId && !gaInitialized) {
+    ReactGA.initialize(measurementId, {
+      gaOptions: {
+        siteSpeedSampleRate: 100,
+      },
+    });
+    gaInitialized = true;
+    console.log('Google Analytics initialized with ID:', measurementId);
+  }
+};
 
 /**
  * Modern analytics hook with privacy-first approach
+ * Integrates with Google Analytics 4
  * @param {object} options - Configuration options
  * @returns {object} Analytics utilities
  */
@@ -14,6 +30,7 @@ export const useAnalytics = (options = {}) => {
     sessionTimeout = 30 * 60 * 1000, // 30 minutes
     batchSize = 10,
     flushInterval = 5000, // 5 seconds
+    enableGA = true, // Enable Google Analytics integration
   } = options;
 
   const location = useLocation();
@@ -140,14 +157,25 @@ export const useAnalytics = (options = {}) => {
 
   // Track page view
   const trackPageView = useCallback((customData = {}) => {
-    queueEvent({
+    const pageData = {
       type: 'page_view',
       page: location.pathname,
       title: document.title,
       performance: getPerformanceMetrics(),
       ...customData,
-    });
-  }, [location.pathname, queueEvent, getPerformanceMetrics]);
+    };
+    
+    queueEvent(pageData);
+    
+    // Send to Google Analytics
+    if (enableGA && gaInitialized && isTrackingAllowed()) {
+      ReactGA.send({ 
+        hitType: "pageview", 
+        page: location.pathname,
+        title: document.title 
+      });
+    }
+  }, [location.pathname, queueEvent, getPerformanceMetrics, enableGA, isTrackingAllowed]);
 
   // Track custom event
   const trackEvent = useCallback((eventName, properties = {}) => {
@@ -156,7 +184,17 @@ export const useAnalytics = (options = {}) => {
       name: eventName,
       properties,
     });
-  }, [queueEvent]);
+    
+    // Send to Google Analytics
+    if (enableGA && gaInitialized && isTrackingAllowed()) {
+      ReactGA.event({
+        category: properties.category || 'User',
+        action: eventName,
+        label: properties.label || '',
+        value: properties.value || 0,
+      });
+    }
+  }, [queueEvent, enableGA, isTrackingAllowed]);
 
   // Track user interaction
   const trackInteraction = useCallback((element, action, properties = {}) => {

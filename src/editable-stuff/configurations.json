@@ -44,5 +44,6 @@
   "gitHubQuerry": "/repos?sort=updated&direction=desc",
   "projectsLength": 2,
   "showNavigationbar": true,
-  "showBlog": false
+  "showBlog": false,
+  "googleAnalyticsMeasurementId": "G-KZ467MRSBG"
 }
