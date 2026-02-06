@@ -137,7 +137,7 @@ const Footer = () => {
               
               <div className="footer-copyright">
                 <span>© {new Date().getFullYear()} Anurag Vaidhya. All rights reserved.</span>
-                <span className="version-badge">v2.2.0</span>
+                <span className="version-badge">v2.2.1</span>
               </div>
             </div>
           </div>

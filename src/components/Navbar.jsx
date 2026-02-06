@@ -20,6 +20,7 @@ const Navbar = () => {
     { href: "/projects", label: "Portfolio", icon: "fas fa-rocket", route: "/projects" },
     { href: "/skills", label: "Tech Stack", icon: "fas fa-code", route: "/skills" },
     { href: "/interests", label: "Beyond Code", icon: "fas fa-compass", route: "/interests" },
+    { href: "/contact", label: "Contact", icon: "fas fa-envelope", route: "/contact" },
   ];
 
   // Handle scroll effects and route changes
@@ -96,19 +97,6 @@ const Navbar = () => {
               </li>
             )}
           </ul>
-
-          {/* CTA Button */}
-          <div className="navbar-cta">
-            <a
-              href="mailto:anuragvaidhya786@gmail.com?subject=Let's Connect - Portfolio Inquiry&body=Hi Anurag,%0D%0A%0D%0AI came across your portfolio and would like to connect with you.%0D%0A%0D%0ABest regards,"
-              className="cta-button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Let's Connect</span>
-              <i className="fas fa-envelope"></i>
-            </a>
-          </div>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -184,19 +172,6 @@ const Navbar = () => {
                 </li>
               )}
             </ul>
-
-            <div className="mobile-nav-footer">
-              <a
-                href="mailto:anuragvaidhya786@gmail.com?subject=Let's Connect - Portfolio Inquiry&body=Hi Anurag,%0D%0A%0D%0AI came across your portfolio and would like to connect with you.%0D%0A%0D%0ABest regards,"
-                className="mobile-cta-button"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleNavClick}
-              >
-                <span>Let's Connect</span>
-                <i className="fas fa-envelope"></i>
-              </a>
-            </div>
           </div>
         </div>
 

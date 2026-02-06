@@ -7,6 +7,7 @@
 @import './styles/light-theme.css';
 @import './styles/portfolio.css';
 @import './styles/about.css';
+@import './styles/contact.css';
 
 /* Main App Styles */
 .App {

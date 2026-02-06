@@ -1,0 +1,233 @@
+/* Floating Contact Button Styles */
+
+.floating-contact-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.floating-contact-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-contact-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.floating-contact-button:hover::before {
+  opacity: 1;
+}
+
+.floating-contact-button i {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.floating-contact-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+}
+
+.floating-contact-button.active {
+  transform: rotate(90deg);
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.floating-contact-button.active:hover {
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* Contact Options */
+.floating-contact-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.floating-contact-option {
+  animation: fadeInScale 0.3s ease-out backwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+.floating-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: white;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: 2px solid transparent;
+}
+
+.floating-contact-link:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--option-color, #667eea);
+  color: var(--option-color, #667eea);
+}
+
+.floating-contact-link i {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--option-color, #667eea);
+  transition: transform 0.3s ease;
+}
+
+.floating-contact-link:hover i {
+  transform: scale(1.2);
+}
+
+.floating-contact-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(102, 126, 234, 0.6);
+  }
+}
+
+.floating-contact-button:not(.active) {
+  animation: pulse 2s infinite;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .floating-contact-container {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .floating-contact-button {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+
+  .floating-contact-link {
+    padding: 10px 16px;
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .floating-contact-link i {
+    font-size: 16px;
+  }
+
+  .floating-contact-options {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-contact-container {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .floating-contact-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .floating-contact-link {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+/* Accessibility */
+.floating-contact-button:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}
+
+.floating-contact-link:focus {
+  outline: 2px solid var(--option-color, #667eea);
+  outline-offset: 2px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .floating-contact-link {
+    background: #2d2d2d;
+    color: #f0f0f0;
+  }
+
+  .floating-contact-link:hover {
+    background: #3d3d3d;
+  }
+}
+
+/* Print - hide floating button */
+@media print {
+  .floating-contact-container {
+    display: none !important;
+  }
+}

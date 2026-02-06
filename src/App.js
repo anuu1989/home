@@ -11,6 +11,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import SectionWrapper from "./components/SectionWrapper";
 import SectionNavigation from "./components/SectionNavigation";
 import ScrollToTop from "./components/ScrollToTop";
+import FloatingContactButton from "./components/FloatingContactButton";
 import { useAnalytics } from "./hooks/useAnalytics";
 
 // Lazy load page components for better performance
@@ -68,6 +69,7 @@ const AppRouter = () => {
     <div className="App">
       <ScrollToTop />
       {showNavigationbar && <Navbar />}
+      <FloatingContactButton />
 
       <Routes>
         {/* Home/Landing Page */}
