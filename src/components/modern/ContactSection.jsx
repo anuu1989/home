@@ -124,7 +124,7 @@ const ContactSection = () => {
               Let's <span className="gradient-text">Connect</span>
             </h1>
             <p className="hero-description animate">
-              With 14+ years of experience in technology leadership, I'm ready to discuss your next project, 
+              With 15+ years of experience in technology leadership, I'm ready to discuss your next project, 
               share insights, or explore collaboration opportunities. Let's connect!
             </p>
           </div>

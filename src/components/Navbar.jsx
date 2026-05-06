@@ -63,7 +63,7 @@ const Navbar = () => {
               <span className="brand-name">{FirstName}</span>
               <span className="brand-bracket">/&gt;</span>
             </div>
-            <div className="brand-subtitle">Infrasmith</div>
+            <div className="brand-subtitle">Senior Tech Leader</div>
           </Link>
         </div>
 

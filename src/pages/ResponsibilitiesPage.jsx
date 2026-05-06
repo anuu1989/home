@@ -15,7 +15,7 @@ const ResponsibilitiesPage = () => {
           <div className="container">
             <h1 className="page-title">Key Responsibilities</h1>
             <p className="page-subtitle">
-              14+ years of progressive responsibilities and achievements across engineering leadership roles
+              15+ years of progressive responsibilities and achievements across engineering leadership roles
             </p>
           </div>
         </div>

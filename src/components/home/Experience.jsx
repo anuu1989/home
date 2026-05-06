@@ -108,7 +108,7 @@ const Experience = () => {
               Career <span className="gradient-text">Experience</span>
             </h1>
             <p className={`hero-description ${animateContent ? 'animate' : ''}`}>
-              14+ years of progressive growth across leading technology companies, 
+              15+ years of progressive growth across leading technology companies, 
               driving innovation and leading high-performing teams
             </p>
           </div>
@@ -295,7 +295,7 @@ const Experience = () => {
                   <i className="fas fa-calendar-alt"></i>
                 </div>
                 <div className="stat-content">
-                  <div className="stat-number">14+</div>
+                  <div className="stat-number">15+</div>
                   <div className="stat-label">Years Experience</div>
                   <div className="stat-description">Professional software development</div>
                 </div>

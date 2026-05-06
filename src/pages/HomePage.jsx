@@ -19,7 +19,7 @@ const HomePage = () => {
           <div className="container">
             <div className="row text-center mb-5">
               <div className="col-12">
-                <h2 className="modern-heading stat-number" style={{ fontWeight: "700", fontSize: "2.5rem" }}>14+ Years of Excellence</h2>
+                <h2 className="modern-heading stat-number" style={{ fontWeight: "700", fontSize: "2.5rem" }}>15+ Years of Excellence</h2>
                 <p className="stat-number" style={{ 
                   fontSize: "1.125rem", 
                   fontWeight: "700", 
@@ -33,7 +33,7 @@ const HomePage = () => {
                   <div className="stat-icon mb-3">
                     <i className="fas fa-calendar-alt"></i>
                   </div>
-                  <h3 className="stat-number">14+</h3>
+                  <h3 className="stat-number">15+</h3>
                   <p className="stat-label stat-number">Years Experience</p>
                   <small className="text-muted">Since 2010</small>
                 </div>
@@ -78,7 +78,7 @@ const HomePage = () => {
             <div className="row text-center">
               <div className="col-12 mb-4">
                 <h2 className="modern-heading">Explore My Portfolio</h2>
-                <p className="modern-text">Discover my 14+ year journey, skills, and achievements in technology leadership</p>
+                <p className="modern-text">Discover my 15+ year journey, skills, and achievements in technology leadership</p>
               </div>
             </div>
             <div className="row">

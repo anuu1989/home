@@ -14,7 +14,7 @@ const InterestsPage = () => {
           <div className="container">
             <h1 className="page-title">Personal Interests</h1>
             <p className="page-subtitle">
-              What keeps me inspired and balanced after 14+ years in the fast-paced tech industry
+              What keeps me inspired and balanced after 15+ years in the fast-paced tech industry
             </p>
           </div>
         </div>

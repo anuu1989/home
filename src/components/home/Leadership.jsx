@@ -297,7 +297,7 @@ const Leadership = () => {
                             <i className="fas fa-trophy"></i>
                           </div>
                           <div className="metric-content">
-                            <div className="metric-number">14+</div>
+                            <div className="metric-number">15+</div>
                             <div className="metric-label">Years Leading</div>
                           </div>
                         </div>

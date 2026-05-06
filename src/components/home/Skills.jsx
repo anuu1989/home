@@ -364,7 +364,7 @@ const Skills = () => {
               Expertise That <span className="gradient-text">Drives Results</span>
             </h1>
             <p className="hero-description">
-              14+ years of hands-on experience (2010-2024) across the full technology stack, 
+              15+ years of hands-on experience (2010-2024) across the full technology stack, 
               from enterprise development to cloud-native solutions, leading teams and driving innovation
             </p>
             

@@ -75,7 +75,7 @@ const AboutMe = () => {
               Meet <span className="gradient-text">Anurag Vaidhya</span>
             </h1>
             <p className={`hero-description ${animateContent ? 'animate' : ''}`}>
-              Senior Engineering Leader & Infrasmith crafting scalable solutions 
+              Senior Tech Leader crafting scalable solutions 
               and leading high-performing teams across cloud, DevOps, and platform engineering
             </p>
           </div>
@@ -109,7 +109,7 @@ const AboutMe = () => {
             <div className="profile-info-section">
               <div className="profile-header">
                 <h3 className="profile-name">Anurag Vaidhya</h3>
-                <p className="profile-title">Senior Engineering Leader & Infrasmith</p>
+                <p className="profile-title">Senior Tech Leader</p>
                 <div className="profile-location">
                   <i className="fas fa-map-marker-alt"></i>
                   <span>Melbourne, Australia</span>
@@ -122,7 +122,7 @@ const AboutMe = () => {
                     <i className="fas fa-calendar-alt"></i>
                   </div>
                   <div className="stat-content">
-                    <div className="stat-number">14+</div>
+                    <div className="stat-number">15+</div>
                     <div className="stat-label">Years Experience</div>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ const AboutMe = () => {
                 <p>{aboutDescription}</p>
                 <p>
                   I'm passionate about building high-performing teams, driving digital transformation, 
-                  and creating scalable solutions that make a real impact. With over 14 years of experience 
+                  and creating scalable solutions that make a real impact. With over 15 years of experience 
                   in the technology industry, I've had the privilege of leading diverse teams and delivering 
                   innovative solutions across multiple domains.
                 </p>
@@ -200,7 +200,7 @@ const AboutMe = () => {
                   <i className="fas fa-briefcase"></i>
                 </div>
                 <div className="highlight-content">
-                  <div className="highlight-number">14+</div>
+                  <div className="highlight-number">15+</div>
                   <div className="highlight-label">Years Experience</div>
                   <div className="highlight-description">Professional software development and leadership</div>
                 </div>

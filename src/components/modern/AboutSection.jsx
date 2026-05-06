@@ -53,7 +53,7 @@ const AboutSection = () => {
           
           <div className="profile-info">
             <h1 className="profile-name">Anurag Vaidhya</h1>
-            <p className="profile-title">Senior Technologist and Infrasmith</p>
+            <p className="profile-title">Senior Technologist and Tech Leader</p>
             <p className="profile-location">
               <i className="fas fa-map-marker-alt"></i>
               Melbourne, Australia
@@ -61,7 +61,7 @@ const AboutSection = () => {
             
             <div className="profile-stats">
               <div className="stat">
-                <span className="stat-number">14+</span>
+                <span className="stat-number">15+</span>
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat">
@@ -92,7 +92,7 @@ const AboutSection = () => {
           <div className="story-content">
             <h2>About Me</h2>
             <p>
-              Strategic and hands-on technology leader with 14+ years of experience across DevSecOps, 
+              Strategic and hands-on technology leader with 15+ years of experience across DevSecOps, 
               platform engineering, and cloud infrastructure. Known for bridging the gap between engineering 
               strategy and execution—designing and delivering secure, scalable, and high-performing platforms 
               that enable speed, stability, and innovation at scale.

@@ -249,7 +249,7 @@ const PortfolioSection = () => {
             </h1>
             <p className="hero-description">
               A comprehensive collection of {projects.length}+ projects showcasing expertise in cloud infrastructure, 
-              automation, web development, and enterprise solutions built over 14+ years
+              automation, web development, and enterprise solutions built over 15+ years
             </p>
             
             {/* Search Bar */}

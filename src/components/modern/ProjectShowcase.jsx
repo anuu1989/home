@@ -107,7 +107,7 @@ const ProjectShowcase = () => {
               My <span className="gradient-text">Portfolio</span>
             </h1>
             <p className="hero-description">
-              Showcasing 14+ years of expertise in cloud infrastructure, DevOps automation, and full-stack development. 
+              Showcasing 15+ years of expertise in cloud infrastructure, DevOps automation, and full-stack development. 
               From startup MVPs to enterprise-scale platforms serving millions of users.
             </p>
           </div>
