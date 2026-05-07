@@ -14,108 +14,142 @@ const HomePage = () => {
           </section>
         </Suspense>
 
+        {/* Section Divider with Logo */}
+        <div className="section-logo-divider">
+          <img src="/logo_av_navbar.svg" alt="" aria-hidden="true" />
+        </div>
+
         {/* Experience Highlights Section */}
-        <section className="experience-highlights py-5" style={{ background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)" }}>
+        <section className="experience-highlights" style={{ padding: '5rem 0' }}>
           <div className="container">
-            <div className="row text-center mb-5">
-              <div className="col-12">
-                <h2 className="modern-heading stat-number" style={{ fontWeight: "700", fontSize: "2.5rem" }}>15+ Years of Excellence</h2>
-                <p className="stat-number" style={{ 
-                  fontSize: "1.125rem", 
-                  fontWeight: "700", 
-                  margin: "0"
-                }}>Proven track record of delivering results across diverse industries and technologies</p>
-              </div>
+            <div className="text-center" style={{ marginBottom: '3rem' }}>
+              <h2 style={{ 
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: "800",
+                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+                color: "#0f172a",
+                letterSpacing: "-0.03em",
+                marginBottom: "0.75rem"
+              }}>
+                15+ Years of <span className="gradient-text">Excellence</span>
+              </h2>
+              <p style={{ 
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "1.1rem", 
+                color: "#64748b",
+                maxWidth: "600px",
+                margin: "0 auto",
+                lineHeight: "1.7"
+              }}>Proven track record of delivering results across diverse industries and technologies</p>
             </div>
-            <div className="row">
+            <div className="row justify-content-center">
               <div className="col-lg-3 col-md-6 mb-4">
-                <div className="experience-stat modern-card p-4 text-center">
-                  <div className="stat-icon mb-3">
+                <div className="experience-stat modern-card p-4 text-center h-100">
+                  <div className="stat-icon mb-3" style={{ fontSize: '1.5rem', color: '#667eea' }}>
                     <i className="fas fa-calendar-alt"></i>
                   </div>
-                  <h3 className="stat-number">15+</h3>
-                  <p className="stat-label stat-number">Years Experience</p>
-                  <small className="text-muted">Since 2010</small>
+                  <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '800', fontSize: '2.25rem', color: '#0f172a', marginBottom: '0.25rem' }}>15+</h3>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: '600', fontSize: '0.95rem', color: '#334155', marginBottom: '0.25rem' }}>Years Experience</p>
+                  <small style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Since 2011</small>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
-                <div className="experience-stat modern-card p-4 text-center">
-                  <div className="stat-icon mb-3">
+                <div className="experience-stat modern-card p-4 text-center h-100">
+                  <div className="stat-icon mb-3" style={{ fontSize: '1.5rem', color: '#8b5cf6' }}>
                     <i className="fas fa-users"></i>
                   </div>
-                  <h3 className="stat-number">25+</h3>
-                  <p className="stat-label stat-number">Engineers Mentored</p>
-                  <small className="text-muted">Across multiple teams</small>
+                  <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '800', fontSize: '2.25rem', color: '#0f172a', marginBottom: '0.25rem' }}>25+</h3>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: '600', fontSize: '0.95rem', color: '#334155', marginBottom: '0.25rem' }}>Engineers Mentored</p>
+                  <small style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Across multiple teams</small>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
-                <div className="experience-stat modern-card p-4 text-center">
-                  <div className="stat-icon mb-3">
+                <div className="experience-stat modern-card p-4 text-center h-100">
+                  <div className="stat-icon mb-3" style={{ fontSize: '1.5rem', color: '#ec4899' }}>
                     <i className="fas fa-project-diagram"></i>
                   </div>
-                  <h3 className="stat-number">100+</h3>
-                  <p className="stat-label stat-number">Projects Delivered</p>
-                  <small className="text-muted">From startups to enterprise</small>
+                  <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '800', fontSize: '2.25rem', color: '#0f172a', marginBottom: '0.25rem' }}>100+</h3>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: '600', fontSize: '0.95rem', color: '#334155', marginBottom: '0.25rem' }}>Projects Delivered</p>
+                  <small style={{ color: '#94a3b8', fontSize: '0.8rem' }}>From startups to enterprise</small>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
-                <div className="experience-stat modern-card p-4 text-center">
-                  <div className="stat-icon mb-3">
+                <div className="experience-stat modern-card p-4 text-center h-100">
+                  <div className="stat-icon mb-3" style={{ fontSize: '1.5rem', color: '#10b981' }}>
                     <i className="fas fa-dollar-sign"></i>
                   </div>
-                  <h3 className="stat-number">$2M+</h3>
-                  <p className="stat-label stat-number">Cost Savings</p>
-                  <small className="text-muted">Through optimization</small>
+                  <h3 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '800', fontSize: '2.25rem', color: '#0f172a', marginBottom: '0.25rem' }}>$2M+</h3>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: '600', fontSize: '0.95rem', color: '#334155', marginBottom: '0.25rem' }}>Cost Savings</p>
+                  <small style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Through optimization</small>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Section Divider with Logo */}
+        <div className="section-logo-divider">
+          <img src="/logo_av_navbar.svg" alt="" aria-hidden="true" />
+        </div>
+
         {/* Quick Navigation Section */}
-        <section className="home-navigation py-5" style={{ background: "white" }}>
+        <section className="home-navigation" style={{ padding: '5rem 0' }}>
           <div className="container">
-            <div className="row text-center">
-              <div className="col-12 mb-4">
-                <h2 className="modern-heading">Explore My Portfolio</h2>
-                <p className="modern-text">Discover my 15+ year journey, skills, and achievements in technology leadership</p>
-              </div>
+            <div className="text-center" style={{ marginBottom: '3rem' }}>
+              <h2 style={{ 
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: "800",
+                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+                color: "#0f172a",
+                letterSpacing: "-0.03em",
+                marginBottom: "0.75rem"
+              }}>
+                Explore My <span className="gradient-text">Portfolio</span>
+              </h2>
+              <p style={{ 
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "1.1rem", 
+                color: "#64748b",
+                maxWidth: "600px",
+                margin: "0 auto",
+                lineHeight: "1.7"
+              }}>Discover my 15+ year journey, skills, and achievements in technology leadership</p>
             </div>
-            <div className="row">
+            <div className="row justify-content-center">
               <div className="col-lg-3 col-md-6 mb-4">
-                <a href="/about" className="nav-card modern-card p-4 text-decoration-none">
-                  <div className="nav-icon mb-3">
+                <a href="/about" className="nav-card modern-card p-4 text-decoration-none d-block text-center h-100">
+                  <div className="nav-icon mb-3" style={{ fontSize: '1.5rem', color: '#667eea' }}>
                     <i className="fas fa-user-circle"></i>
                   </div>
-                  <h4 className="modern-heading mb-2">About Me</h4>
-                  <p className="modern-text">My background, skills, and journey</p>
+                  <h4 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '700', fontSize: '1.1rem', color: '#0f172a', marginBottom: '0.5rem' }}>About Me</h4>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#64748b', marginBottom: '0' }}>My background, skills, and journey</p>
                 </a>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
-                <a href="/skills" className="nav-card modern-card p-4 text-decoration-none">
-                  <div className="nav-icon mb-3">
+                <a href="/skills" className="nav-card modern-card p-4 text-decoration-none d-block text-center h-100">
+                  <div className="nav-icon mb-3" style={{ fontSize: '1.5rem', color: '#8b5cf6' }}>
                     <i className="fas fa-code"></i>
                   </div>
-                  <h4 className="modern-heading mb-2">Skills</h4>
-                  <p className="modern-text">Technical expertise and certifications</p>
+                  <h4 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '700', fontSize: '1.1rem', color: '#0f172a', marginBottom: '0.5rem' }}>Skills</h4>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#64748b', marginBottom: '0' }}>Technical expertise and certifications</p>
                 </a>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
-                <a href="/projects" className="nav-card modern-card p-4 text-decoration-none">
-                  <div className="nav-icon mb-3">
+                <a href="/projects" className="nav-card modern-card p-4 text-decoration-none d-block text-center h-100">
+                  <div className="nav-icon mb-3" style={{ fontSize: '1.5rem', color: '#ec4899' }}>
                     <i className="fas fa-project-diagram"></i>
                   </div>
-                  <h4 className="modern-heading mb-2">Projects</h4>
-                  <p className="modern-text">Featured work and achievements</p>
+                  <h4 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '700', fontSize: '1.1rem', color: '#0f172a', marginBottom: '0.5rem' }}>Projects</h4>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#64748b', marginBottom: '0' }}>Featured work and achievements</p>
                 </a>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
-                <a href="/contact" className="nav-card modern-card p-4 text-decoration-none">
-                  <div className="nav-icon mb-3">
+                <a href="/contact" className="nav-card modern-card p-4 text-decoration-none d-block text-center h-100">
+                  <div className="nav-icon mb-3" style={{ fontSize: '1.5rem', color: '#10b981' }}>
                     <i className="fas fa-envelope"></i>
                   </div>
-                  <h4 className="modern-heading mb-2">Contact</h4>
-                  <p className="modern-text">Let's discuss opportunities</p>
+                  <h4 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '700', fontSize: '1.1rem', color: '#0f172a', marginBottom: '0.5rem' }}>Contact</h4>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.875rem', color: '#64748b', marginBottom: '0' }}>Let's discuss opportunities</p>
                 </a>
               </div>
             </div>

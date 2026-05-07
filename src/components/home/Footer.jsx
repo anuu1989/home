@@ -83,9 +83,21 @@ const Footer = () => {
           
           <div className="footer-info">
             <div className="footer-left">
-              <div className="footer-brand">
-                <span className="brand-name">Anurag Vaidhya</span>
-                <span className="brand-title">Senior Engineering Leader</span>
+              <div className="footer-brand" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <img 
+                  src="/logo_av_navbar.svg" 
+                  alt="AV" 
+                  style={{ 
+                    width: '36px', 
+                    height: '36px', 
+                    borderRadius: '8px',
+                    boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)'
+                  }} 
+                />
+                <div>
+                  <span className="brand-name">Anurag Vaidhya</span>
+                  <span className="brand-title">Senior Tech Leader</span>
+                </div>
               </div>
               <div className="footer-location">
                 <i className="fas fa-map-marker-alt"></i>

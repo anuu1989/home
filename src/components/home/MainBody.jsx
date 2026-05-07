@@ -40,6 +40,28 @@ const MainBody = () => {
               Welcome to my portfolio
             </span>
           </div>
+
+          <div className="hero-logo mb-4" style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+            <div style={{
+              position: 'absolute',
+              inset: '-12px',
+              background: 'radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%)',
+              borderRadius: '36px',
+              filter: 'blur(15px)',
+              animation: 'pulse 3s ease-in-out infinite'
+            }}></div>
+            <img 
+              src="/logo_av.svg" 
+              alt="Anurag Vaidhya Logo" 
+              style={{ 
+                width: '110px', 
+                height: '110px', 
+                borderRadius: '24px',
+                position: 'relative',
+                boxShadow: '0 8px 32px rgba(102, 126, 234, 0.4)'
+              }} 
+            />
+          </div>
           
           <h1 className="modern-hero-title modern-heading">
             {FirstName} <span className="text-gradient-primary">{MiddleName}</span> {LastName}
@@ -84,7 +106,7 @@ const MainBody = () => {
             <div className="row text-center">
               <div className="col-md-3">
                 <div className="stat-item glass-effect p-3 rounded-3">
-                  <h3 className="text-white mb-1">14+</h3>
+                  <h3 className="text-white mb-1">15+</h3>
                   <p className="text-white-50 mb-0">Years Experience</p>
                   <small className="text-white-50">Since 2010</small>
                 </div>

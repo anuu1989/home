@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { showBlog, FirstName } from "../editable-stuff/configurations.json";
+import { showBlog, FirstName, LastName } from "../editable-stuff/configurations.json";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,12 +58,25 @@ const Navbar = () => {
             aria-label={`${FirstName}'s Portfolio Home`}
             onClick={handleNavClick}
           >
-            <div className="brand-logo">
-              <span className="brand-bracket">&lt;</span>
-              <span className="brand-name">{FirstName}</span>
-              <span className="brand-bracket">/&gt;</span>
+            <div className="brand-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <img 
+                src="/logo_av_navbar.svg" 
+                alt="AV Logo" 
+                style={{ 
+                  width: '34px', 
+                  height: '34px', 
+                  borderRadius: '8px',
+                  boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)'
+                }} 
+              />
+              <span style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: '700',
+                fontSize: '0.8rem',
+                color: '#64748b',
+                letterSpacing: '0.02em'
+              }}>Senior Tech Leader</span>
             </div>
-            <div className="brand-subtitle">Senior Tech Leader</div>
           </Link>
         </div>
 
@@ -119,10 +132,22 @@ const Navbar = () => {
         <div className={`mobile-nav ${isMenuOpen ? "open" : ""}`} id="mobileNav">
           <div className="mobile-nav-content">
             <div className="mobile-nav-header">
-              <div className="mobile-brand">
-                <span className="brand-bracket">&lt;</span>
-                <span className="brand-name">{FirstName}</span>
-                <span className="brand-bracket">/&gt;</span>
+              <div className="mobile-brand" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <img 
+                  src="/logo_av_navbar.svg" 
+                  alt="AV Logo" 
+                  style={{ 
+                    width: '32px', 
+                    height: '32px', 
+                    borderRadius: '8px'
+                  }} 
+                />
+                <span style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontWeight: '700',
+                  fontSize: '1rem',
+                  color: '#0f172a'
+                }}>{FirstName} {LastName}</span>
               </div>
               <button
                 className="mobile-close"

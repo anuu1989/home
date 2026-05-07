@@ -225,9 +225,116 @@
   }
 }
 
-/* Print - hide floating button */
+/* ============================================
+   LOGO USAGE THROUGHOUT SITE
+   ============================================ */
+
+/* Loading spinner with logo */
+.modern-loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+.modern-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.spinner-logo-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+.spinner-ring-outer {
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  border-top-color: #667eea;
+  border-right-color: #764ba2;
+  border-radius: 50%;
+  animation: spinRing 1.2s linear infinite;
+}
+
+@keyframes spinRing {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.92); opacity: 0.8; }
+}
+
+.spinner-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+/* Hero logo glow */
+.hero-logo {
+  position: relative;
+}
+
+/* Section watermark logo */
+.portfolio-section {
+  position: relative;
+}
+
+/* Page section divider with logo */
+.section-logo-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.section-logo-divider::before,
+.section-logo-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
+}
+
+.section-logo-divider img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  opacity: 0.5;
+}
+
+/* Print - hide decorative logos */
 @media print {
-  .floating-contact-container {
+  .hero-logo,
+  .spinner-logo-wrapper {
     display: none !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-logo-divider img {
+    width: 28px;
+    height: 28px;
   }
 }

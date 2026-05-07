@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="50%" style="stop-color:#764ba2"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="40%" style="stop-color:#1e1b4b"/>
+      <stop offset="100%" style="stop-color:#312e81"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#667eea;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="8" y="8" width="176" height="176" rx="38" ry="38" fill="url(#bgGrad)"/>
+  
+  <!-- Glow -->
+  <circle cx="96" cy="90" r="60" fill="url(#glow)"/>
+  
+  <!-- Monogram "AV" - centered -->
+  <g transform="translate(52, 50)">
+    <!-- "A" -->
+    <path d="M 0 92 L 28 0 L 56 92" 
+          fill="none" 
+          stroke="url(#grad1)" 
+          stroke-width="13" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    <!-- A crossbar -->
+    <line x1="12" y1="62" x2="44" y2="62" 
+          stroke="url(#grad2)" 
+          stroke-width="9" 
+          stroke-linecap="round"/>
+    
+    <!-- "V" -->
+    <path d="M 40 0 L 68 92 L 96 0" 
+          fill="none" 
+          stroke="url(#grad1)" 
+          stroke-width="13" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+          opacity="0.85"/>
+  </g>
+  
+  <!-- Accent dot -->
+  <circle cx="140" cy="148" r="3" fill="#667eea"/>
+</svg>

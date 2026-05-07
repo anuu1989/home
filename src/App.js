@@ -40,15 +40,30 @@ const PageWrapper = ({ children }) => {
 
 // 404 Not Found component
 const NotFound = () => (
-  <div className="container mt-5 pt-5 text-center">
+  <div className="container mt-5 pt-5 text-center" style={{ minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
     <div className="row justify-content-center">
       <div className="col-md-6">
-        <h1 className="display-1 text-muted">404</h1>
-        <h2 className="mb-3">Page Not Found</h2>
-        <p className="lead mb-4">
+        <img 
+          src="/logo_av.svg" 
+          alt="AV" 
+          style={{ width: '80px', height: '80px', borderRadius: '20px', marginBottom: '2rem', opacity: 0.6 }} 
+        />
+        <h1 className="display-1" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '800', color: '#0f172a' }}>404</h1>
+        <h2 className="mb-3" style={{ fontFamily: "'Poppins', sans-serif", color: '#334155' }}>Page Not Found</h2>
+        <p className="lead mb-4" style={{ color: '#64748b' }}>
           The page you're looking for doesn't exist.
         </p>
-        <a href="/" className="btn btn-primary">
+        <a href="/" className="hero-btn hero-btn-primary" style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '8px',
+          padding: '12px 24px',
+          background: 'linear-gradient(135deg, #667eea, #764ba2)',
+          color: 'white',
+          borderRadius: '10px',
+          textDecoration: 'none',
+          fontWeight: '600'
+        }}>
           <i className="fas fa-home"></i> Go Home
         </a>
       </div>
