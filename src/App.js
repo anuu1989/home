@@ -1,220 +1,88 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import { showNavigationbar, showBlog } from "./editable-stuff/configurations.json";
-import { AppProvider } from "./context/AppContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/home/Footer";
 import LoadingSpinner from "./components/LoadingSpinner";
-import SectionWrapper from "./components/SectionWrapper";
-import SectionNavigation from "./components/SectionNavigation";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingContactButton from "./components/FloatingContactButton";
+import CommandPalette from "./components/CommandPalette";
+import ShortcutsModal from "./components/ShortcutsModal";
+import { useCommandPalette } from "./hooks/useCommandPalette";
+import { useShortcutsHelp } from "./hooks/useShortcutsHelp";
 import { useAnalytics } from "./hooks/useAnalytics";
+import { useDocumentTitle } from "./hooks/useDocumentTitle";
 
-// Lazy load page components for better performance
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ExperiencePage = lazy(() => import("./pages/ExperiencePage"));
-const ResponsibilitiesPage = lazy(() => import("./pages/ResponsibilitiesPage"));
 const LeadershipPage = lazy(() => import("./pages/LeadershipPage"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 const SkillsPage = lazy(() => import("./pages/SkillsPage"));
 const InterestsPage = lazy(() => import("./pages/InterestsPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 
-// Lazy load blog components only if blog is enabled
 const Blog = showBlog ? lazy(() => import("./components/blog/Blog")) : null;
 const BlogPost = showBlog ? lazy(() => import("./components/blog/BlogPost")) : null;
 
-// Page wrapper component for consistent layout
-const PageWrapper = ({ children }) => {
+const PageWrapper = ({ children }) => <main className="main-content">{children}</main>;
+
+const NotFound = () => {
+  useDocumentTitle('Page Not Found');
+
   return (
-    <main className="main-content">
-      {children}
-    </main>
+  <div className="state-block" style={{ minHeight: "80vh" }}>
+    <img src="/logo_av.svg" alt="" style={{ width: 64, height: 64, borderRadius: 16, opacity: 0.6 }} />
+    <h1 style={{ fontSize: "var(--fs-3xl)", color: "var(--color-text)" }}>404</h1>
+    <p>The page you're looking for doesn't exist.</p>
+    <a href="/" className="btn btn-primary">
+      <i className="fas fa-house" aria-hidden="true"></i> Go Home
+    </a>
+  </div>
   );
 };
 
-// 404 Not Found component
-const NotFound = () => (
-  <div className="container mt-5 pt-5 text-center" style={{ minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <div className="row justify-content-center">
-      <div className="col-md-6">
-        <img 
-          src="/logo_av.svg" 
-          alt="AV" 
-          style={{ width: '80px', height: '80px', borderRadius: '20px', marginBottom: '2rem', opacity: 0.6 }} 
-        />
-        <h1 className="display-1" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: '800', color: '#0f172a' }}>404</h1>
-        <h2 className="mb-3" style={{ fontFamily: "'Poppins', sans-serif", color: '#334155' }}>Page Not Found</h2>
-        <p className="lead mb-4" style={{ color: '#64748b' }}>
-          The page you're looking for doesn't exist.
-        </p>
-        <a href="/" className="hero-btn hero-btn-primary" style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '8px',
-          padding: '12px 24px',
-          background: 'linear-gradient(135deg, #667eea, #764ba2)',
-          color: 'white',
-          borderRadius: '10px',
-          textDecoration: 'none',
-          fontWeight: '600'
-        }}>
-          <i className="fas fa-home"></i> Go Home
-        </a>
-      </div>
-    </div>
-  </div>
-);
-
-// Main App Router Component
 const AppRouter = () => {
-  const { trackEvent } = useAnalytics();
+  useAnalytics();
+  const commandPalette = useCommandPalette();
+  const shortcutsHelp = useShortcutsHelp();
 
-  // Track navigation events
-  const handleRouteChange = (path) => {
-    trackEvent('navigation', { path });
-  };
+  const withPage = (Component) => (
+    <PageWrapper>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Component />
+      </Suspense>
+    </PageWrapper>
+  );
 
   return (
     <div className="App">
       <ScrollToTop />
-      {showNavigationbar && <Navbar />}
+      {showNavigationbar && <Navbar onOpenCommandPalette={commandPalette.open} />}
       <FloatingContactButton />
+      <CommandPalette isOpen={commandPalette.isOpen} onClose={commandPalette.close} onOpenShortcuts={shortcutsHelp.open} />
+      <ShortcutsModal isOpen={shortcutsHelp.isOpen} onClose={shortcutsHelp.close} />
 
       <Routes>
-        {/* Home/Landing Page */}
-        <Route 
-          path="/" 
-          element={
-            <PageWrapper>
-              <Suspense fallback={<LoadingSpinner />}>
-                <HomePage />
-              </Suspense>
-            </PageWrapper>
-          } 
-        />
+        <Route path="/" element={withPage(HomePage)} />
+        <Route path="/about" element={withPage(AboutPage)} />
+        <Route path="/experience" element={withPage(ExperiencePage)} />
+        <Route path="/responsibilities" element={<Navigate to="/skills" replace />} />
+        <Route path="/leadership" element={withPage(LeadershipPage)} />
+        <Route path="/projects" element={withPage(ProjectsPage)} />
+        <Route path="/skills" element={withPage(SkillsPage)} />
+        <Route path="/interests" element={withPage(InterestsPage)} />
+        <Route path="/contact" element={withPage(ContactPage)} />
 
-        {/* Individual Section Pages */}
-        <Route 
-          path="/about" 
-          element={
-            <PageWrapper>
-              <Suspense fallback={<LoadingSpinner />}>
-                <AboutPage />
-              </Suspense>
-            </PageWrapper>
-          } 
-        />
-        
-        <Route 
-          path="/experience" 
-          element={
-            <PageWrapper>
-              <Suspense fallback={<LoadingSpinner />}>
-                <ExperiencePage />
-              </Suspense>
-            </PageWrapper>
-          } 
-        />
-        
-        <Route 
-          path="/responsibilities" 
-          element={
-            <PageWrapper>
-              <Suspense fallback={<LoadingSpinner />}>
-                <ResponsibilitiesPage />
-              </Suspense>
-            </PageWrapper>
-          } 
-        />
-        
-        <Route 
-          path="/leadership" 
-          element={
-            <PageWrapper>
-              <Suspense fallback={<LoadingSpinner />}>
-                <LeadershipPage />
-              </Suspense>
-            </PageWrapper>
-          } 
-        />
-        
-        <Route 
-          path="/projects" 
-          element={
-            <PageWrapper>
-              <Suspense fallback={<LoadingSpinner />}>
-                <ProjectsPage />
-              </Suspense>
-            </PageWrapper>
-          } 
-        />
-        
-        <Route 
-          path="/skills" 
-          element={
-            <PageWrapper>
-              <Suspense fallback={<LoadingSpinner />}>
-                <SkillsPage />
-              </Suspense>
-            </PageWrapper>
-          } 
-        />
-        
-        <Route 
-          path="/interests" 
-          element={
-            <PageWrapper>
-              <Suspense fallback={<LoadingSpinner />}>
-                <InterestsPage />
-              </Suspense>
-            </PageWrapper>
-          } 
-        />
-        
-        <Route 
-          path="/contact" 
-          element={
-            <PageWrapper>
-              <Suspense fallback={<LoadingSpinner />}>
-                <ContactPage />
-              </Suspense>
-            </PageWrapper>
-          } 
-        />
-
-        {/* Blog routes - only if blog is enabled */}
         {showBlog && Blog && (
           <>
-            <Route
-              path="/blog"
-              element={
-                <PageWrapper>
-                  <Suspense fallback={<LoadingSpinner />}>
-                    <Blog />
-                  </Suspense>
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/blog/:id"
-              element={
-                <PageWrapper>
-                  <Suspense fallback={<LoadingSpinner />}>
-                    <BlogPost />
-                  </Suspense>
-                </PageWrapper>
-              }
-            />
+            <Route path="/blog" element={withPage(Blog)} />
+            <Route path="/blog/:id" element={withPage(BlogPost)} />
           </>
         )}
 
-        {/* 404 route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 
@@ -223,16 +91,12 @@ const AppRouter = () => {
   );
 };
 
-const App = () => {
-  return (
-    <ThemeProvider>
-      <AppProvider>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <AppRouter />
-        </BrowserRouter>
-      </AppProvider>
-    </ThemeProvider>
-  );
-};
+const App = () => (
+  <ThemeProvider>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <AppRouter />
+    </BrowserRouter>
+  </ThemeProvider>
+);
 
 export default App;

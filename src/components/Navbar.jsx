@@ -1,211 +1,103 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { showBlog, FirstName, LastName } from "../editable-stuff/configurations.json";
+import { useTheme } from "../context/ThemeContext";
 
-const Navbar = () => {
+const NAV_ITEMS = [
+  { to: "/", label: "Welcome" },
+  { to: "/about", label: "About" },
+  { to: "/experience", label: "Experience" },
+  { to: "/leadership", label: "Leadership" },
+  { to: "/projects", label: "Projects" },
+  { to: "/skills", label: "Skills" },
+  { to: "/interests", label: "Interests" },
+  { to: "/contact", label: "Contact" },
+];
+
+const Navbar = ({ onOpenCommandPalette }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { resolvedTheme, toggleTheme } = useTheme();
   const location = useLocation();
-  const [activeRoute, setActiveRoute] = useState(location.pathname);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
-
-  const navItems = [
-    { href: "/", label: "Welcome", icon: "fas fa-home", route: "/" },
-    { href: "/about", label: "About Me", icon: "fas fa-user-circle", route: "/about" },
-    { href: "/experience", label: "Journey", icon: "fas fa-route", route: "/experience" },
-    { href: "/responsibilities", label: "Expertise", icon: "fas fa-star", route: "/responsibilities" },
-    { href: "/leadership", label: "Leadership", icon: "fas fa-users-cog", route: "/leadership" },
-    { href: "/projects", label: "Portfolio", icon: "fas fa-rocket", route: "/projects" },
-    { href: "/skills", label: "Tech Stack", icon: "fas fa-code", route: "/skills" },
-    { href: "/interests", label: "Beyond Code", icon: "fas fa-compass", route: "/interests" },
-    { href: "/contact", label: "Contact", icon: "fas fa-envelope", route: "/contact" },
-  ];
-
-  // Handle scroll effects and route changes
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Update active route when location changes
   useEffect(() => {
-    setActiveRoute(location.pathname);
+    setIsMenuOpen(false);
   }, [location.pathname]);
 
-  const handleNavClick = () => {
-    closeMenu();
-  };
+  const items = showBlog ? [...NAV_ITEMS, { to: "/blog", label: "Blog" }] : NAV_ITEMS;
 
   return (
-    <nav
-      className={`modern-navbar ${isScrolled ? "scrolled" : ""} ${isMenuOpen ? "menu-open" : ""}`}
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <div className="navbar-container">
-        {/* Brand Logo */}
-        <div className="navbar-brand-container">
-          <Link
-            className="navbar-brand"
-            to="/"
-            aria-label={`${FirstName}'s Portfolio Home`}
-            onClick={handleNavClick}
+    <>
+    <nav className={`navbar ${isScrolled ? "scrolled" : ""} ${isMenuOpen ? "menu-open" : ""}`} role="navigation" aria-label="Main navigation">
+      <div className="navbar-inner">
+        <Link to="/" className="navbar-brand" aria-label={`${FirstName}'s Portfolio Home`}>
+          <img src="/logo_av_navbar.svg" alt="" />
+          <span className="navbar-brand-title">
+            {FirstName} {LastName}
+            <span className="navbar-brand-sub">Senior Tech Leader</span>
+          </span>
+        </Link>
+
+        <div className="navbar-links">
+          {items.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className={`navbar-link ${location.pathname === item.to ? "active" : ""}`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="navbar-actions">
+          <button type="button" className="cmdk-trigger" onClick={onOpenCommandPalette} aria-label="Open command palette">
+            <i className="fas fa-search cmdk-trigger-icon" aria-hidden="true"></i>
+            <span>Search</span>
+            <kbd>&#8984;K</kbd>
+          </button>
+          <button
+            type="button"
+            className="icon-btn"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
           >
-            <div className="brand-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <img 
-                src="/logo_av_navbar.svg" 
-                alt="AV Logo" 
-                style={{ 
-                  width: '34px', 
-                  height: '34px', 
-                  borderRadius: '8px',
-                  boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)'
-                }} 
-              />
-              <span style={{
-                fontFamily: "'Poppins', sans-serif",
-                fontWeight: '700',
-                fontSize: '0.8rem',
-                color: '#64748b',
-                letterSpacing: '0.02em'
-              }}>Senior Tech Leader</span>
-            </div>
-          </Link>
+            <i className={resolvedTheme === "dark" ? "fas fa-sun" : "fas fa-moon"} aria-hidden="true"></i>
+          </button>
+          <button
+            type="button"
+            className="navbar-menu-btn"
+            onClick={() => setIsMenuOpen((v) => !v)}
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle navigation menu"
+          >
+            <span className="hamburger"><span></span><span></span><span></span></span>
+          </button>
         </div>
-
-        {/* Desktop Navigation */}
-        <div className="navbar-nav-desktop">
-          <ul className="nav-list">
-            {navItems.map((item) => (
-              <li key={item.href} className="nav-item">
-                <Link
-                  className={`nav-link ${activeRoute === item.route ? "active" : ""}`}
-                  to={item.route}
-                  onClick={handleNavClick}
-                  aria-label={`Navigate to ${item.label} page`}
-                >
-                  <span className="nav-text">{item.label}</span>
-                  <div className="nav-indicator"></div>
-                </Link>
-              </li>
-            ))}
-
-            {showBlog && (
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/blog"
-                  aria-label="Navigate to blog"
-                >
-                  <span className="nav-text">Blog</span>
-                  <div className="nav-indicator"></div>
-                </Link>
-              </li>
-            )}
-          </ul>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="mobile-menu-toggle"
-          type="button"
-          onClick={toggleMenu}
-          aria-controls="mobileNav"
-          aria-expanded={isMenuOpen}
-          aria-label="Toggle navigation menu"
-        >
-          <div className="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-
-        {/* Mobile Navigation */}
-        <div className={`mobile-nav ${isMenuOpen ? "open" : ""}`} id="mobileNav">
-          <div className="mobile-nav-content">
-            <div className="mobile-nav-header">
-              <div className="mobile-brand" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <img 
-                  src="/logo_av_navbar.svg" 
-                  alt="AV Logo" 
-                  style={{ 
-                    width: '32px', 
-                    height: '32px', 
-                    borderRadius: '8px'
-                  }} 
-                />
-                <span style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontWeight: '700',
-                  fontSize: '1rem',
-                  color: '#0f172a'
-                }}>{FirstName} {LastName}</span>
-              </div>
-              <button
-                className="mobile-close"
-                onClick={closeMenu}
-                aria-label="Close navigation menu"
-              >
-                <i className="fas fa-times"></i>
-              </button>
-            </div>
-
-            <ul className="mobile-nav-list">
-              {navItems.map((item, index) => (
-                <li key={item.href} className="mobile-nav-item" style={{ "--delay": `${index * 0.1}s` }}>
-                  <Link
-                    className={`mobile-nav-link ${activeRoute === item.route ? "active" : ""}`}
-                    to={item.route}
-                    onClick={handleNavClick}
-                    aria-label={`Navigate to ${item.label} page`}
-                  >
-                    <div className="mobile-nav-icon">
-                      <i className={item.icon}></i>
-                    </div>
-                    <span className="mobile-nav-text">{item.label}</span>
-                    <div className="mobile-nav-arrow">
-                      <i className="fas fa-chevron-right"></i>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-
-              {showBlog && (
-                <li className="mobile-nav-item" style={{ "--delay": `${navItems.length * 0.1}s` }}>
-                  <Link
-                    className="mobile-nav-link"
-                    to="/blog"
-                    onClick={closeMenu}
-                    aria-label="Navigate to blog"
-                  >
-                    <div className="mobile-nav-icon">
-                      <i className="fas fa-blog"></i>
-                    </div>
-                    <span className="mobile-nav-text">Blog</span>
-                    <div className="mobile-nav-arrow">
-                      <i className="fas fa-chevron-right"></i>
-                    </div>
-                  </Link>
-                </li>
-              )}
-            </ul>
-          </div>
-        </div>
-
-        {/* Mobile Overlay */}
-        {isMenuOpen && <div className="mobile-overlay" onClick={closeMenu}></div>}
       </div>
     </nav>
+
+    <div className={`navbar-mobile ${isMenuOpen ? "open" : ""}`}>
+      {items.map((item) => (
+        <Link
+          key={item.to}
+          to={item.to}
+          className={`navbar-mobile-link ${location.pathname === item.to ? "active" : ""}`}
+        >
+          {item.label}
+          <i className="fas fa-chevron-right" aria-hidden="true"></i>
+        </Link>
+      ))}
+    </div>
+    </>
   );
 };
-
 
 export default Navbar;
