@@ -26,28 +26,24 @@ const FloatingContactButton = () => {
       icon: 'fas fa-envelope',
       label: 'Contact Form',
       link: '/contact',
-      color: '#4A90E2',
       isInternal: true
     },
     {
       icon: 'fas fa-paper-plane',
       label: 'Email Me',
       link: 'mailto:anuragvaidhya786@gmail.com',
-      color: '#E74C3C',
       isInternal: false
     },
     {
       icon: 'fab fa-linkedin',
       label: 'LinkedIn',
       link: 'https://www.linkedin.com/in/anurag-vaidhya-47b93222',
-      color: '#0077B5',
       isInternal: false
     },
     {
       icon: 'fab fa-github',
       label: 'GitHub',
       link: 'https://github.com/anuu1989',
-      color: '#333',
       isInternal: false
     }
   ];
@@ -63,10 +59,7 @@ const FloatingContactButton = () => {
                 <div
                   key={option.label}
                   className="floating-contact-option"
-                  style={{
-                    animationDelay: `${index * 0.05}s`,
-                    '--option-color': option.color
-                  }}
+                  style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   {option.isInternal ? (
                     <Link

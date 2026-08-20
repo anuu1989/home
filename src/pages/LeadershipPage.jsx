@@ -1,35 +1,16 @@
 import React, { Suspense } from "react";
 import LoadingSpinner from "../components/LoadingSpinner";
-import SectionDivider from "../components/SectionDivider";
+import PageHeader from "../components/PageHeader";
 
 const Leadership = React.lazy(() => import("../components/home/Leadership"));
 
-const LeadershipPage = () => {
-  return (
-    <div className="page-container">
-      <div 
-        className="page-content"
-        style={{ background: "white" }}
-      >
-        <div className="page-header">
-          <div className="container">
-            <h1 className="page-title">Leadership & Management</h1>
-            <p className="page-subtitle">
-              15+ years of leading high-performing teams and driving successful project outcomes across diverse industries
-            </p>
-          </div>
-        </div>
-        
-        <Suspense fallback={<LoadingSpinner />}>
-          <section id="leadership" className="section-content">
-            <Leadership />
-          </section>
-        </Suspense>
-      </div>
-      
-
-    </div>
-  );
-};
+const LeadershipPage = () => (
+  <div>
+    <PageHeader title="Leadership & Management" subtitle="15+ years of leading high-performing teams and driving successful project outcomes across diverse industries" />
+    <Suspense fallback={<LoadingSpinner />}>
+      <Leadership />
+    </Suspense>
+  </div>
+);
 
 export default LeadershipPage;
