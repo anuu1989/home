@@ -10,10 +10,10 @@ import ScrollToTop from "./components/ScrollToTop";
 import FloatingContactButton from "./components/FloatingContactButton";
 import CommandPalette from "./components/CommandPalette";
 import ShortcutsModal from "./components/ShortcutsModal";
+import NotFound from "./components/NotFound";
 import { useCommandPalette } from "./hooks/useCommandPalette";
 import { useShortcutsHelp } from "./hooks/useShortcutsHelp";
 import { useAnalytics } from "./hooks/useAnalytics";
-import { useDocumentTitle } from "./hooks/useDocumentTitle";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -28,21 +28,6 @@ const Blog = showBlog ? lazy(() => import("./components/blog/Blog")) : null;
 const BlogPost = showBlog ? lazy(() => import("./components/blog/BlogPost")) : null;
 
 const PageWrapper = ({ children }) => <main id="main-content" className="main-content" tabIndex={-1}>{children}</main>;
-
-const NotFound = () => {
-  useDocumentTitle('Page Not Found');
-
-  return (
-  <div className="state-block" style={{ minHeight: "80vh" }}>
-    <img src="/logo_av.svg" alt="" style={{ width: 64, height: 64, borderRadius: 16, opacity: 0.6 }} />
-    <h1 style={{ fontSize: "var(--fs-3xl)", color: "var(--color-text)" }}>404</h1>
-    <p>The page you're looking for doesn't exist.</p>
-    <a href="/" className="btn btn-primary">
-      <i className="fas fa-house" aria-hidden="true"></i> Go Home
-    </a>
-  </div>
-  );
-};
 
 const AppRouter = () => {
   useAnalytics();
@@ -83,7 +68,7 @@ const AppRouter = () => {
           </>
         )}
 
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<PageWrapper><NotFound onSearch={commandPalette.open} /></PageWrapper>} />
       </Routes>
 
       <Footer />

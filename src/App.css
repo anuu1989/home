@@ -10,6 +10,7 @@
 @import './styles/contact.css';
 @import './styles/command-palette.css';
 @import './styles/features.css';
+@import './styles/errors.css';
 @import './styles/print.css';
 
 .App {
