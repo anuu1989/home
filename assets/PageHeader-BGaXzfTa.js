@@ -1,0 +1,1 @@
+import{A as e,R as t,t as n}from"./index-Dgj0AXj_.js";t();var r=e(),i=({title:e,subtitle:t,kicker:i})=>(n(e,t),(0,r.jsx)(`header`,{className:`page-header`,children:(0,r.jsxs)(`div`,{className:`container`,children:[i&&(0,r.jsx)(`span`,{className:`page-kicker`,children:i}),(0,r.jsx)(`h1`,{children:e}),t&&(0,r.jsx)(`p`,{children:t})]})}));export{i as t};
